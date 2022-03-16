@@ -11,7 +11,6 @@ export const RawPost = (props) => {
     axios
       .get(props.url)
       .then((response) => {
-        console.log(response.data);
         setMovies(response.data.results);
       })
       .catch((err) => console.log(err));
@@ -41,7 +40,7 @@ export const RawPost = (props) => {
   };
   return (
     <div className="row">
-      <h2>Movie name</h2>
+      <h2>{props.title}</h2>
       <div className="posters">
         {movies.map((obj) => (
           <img
